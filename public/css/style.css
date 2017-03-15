@@ -1,0 +1,100 @@
+@font-face {
+    font-family: 'digital-7';
+    src: url('./fonts/digital-7/digital-7-webfont.woff2') format('woff2'),
+         url('./fonts/digital-7/digital-7-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body{
+    background-color: #3fde85;
+}
+#wakati{
+    width: 100%;
+    font-family: "digital-7";
+    font-size: 150px;
+    color: #585858;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.time-body-container{
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    text-align: center;
+}
+.time-body{
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    text-align: center;
+}
+
+/*animation*/
+
+@-webkit-keyframes zoomInDown {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(.1, .1, .1) translate3d(0, -1000px, 0);
+    transform: scale3d(.1, .1, .1) translate3d(0, -1000px, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+    animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: scale3d(.475, .475, .475) translate3d(0, 60px, 0);
+    transform: scale3d(.475, .475, .475) translate3d(0, 60px, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+  }
+}
+
+@keyframes zoomInDown {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(.1, .1, .1) translate3d(0, -1000px, 0);
+    transform: scale3d(.1, .1, .1) translate3d(0, -1000px, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+    animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: scale3d(.475, .475, .475) translate3d(0, 60px, 0);
+    transform: scale3d(.475, .475, .475) translate3d(0, 60px, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+  }
+}
+
+.zoomInDown {
+  -webkit-animation-name: zoomInDown;
+  animation-name: zoomInDown;
+}
+
+button{
+    padding: 12px 40px;
+    font-size: 15px;
+    background-color: #2f905a;
+    color: #54ff9f;
+    border: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 4px;
+}
+button:hover{
+  cursor: pointer;
+  background-color: #227748;
+}
+button:focus{
+  outline: none;
+  border: none;
+}
+.wakati-buttons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
