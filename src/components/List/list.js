@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './list.css';
 import trashcan from "../../assests/img/trash-can.png"
 
+
 class List extends Component {
     constructor(){
         super();
