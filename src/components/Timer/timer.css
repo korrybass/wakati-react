@@ -33,7 +33,7 @@ body{
     -webkit-animation-duration: 1s;
     animation-duration: 1s;
     text-align: center;
-    color: #264d35;
+    color: #2f905a;
 }
 .time-body span{
   min-width: 95px;
@@ -86,7 +86,7 @@ button{
     padding: 12px 40px;
     font-size: 15px;
     background-color: #2f905a;
-    color: #54ff9f;
+    color: #f1f1f1;
     border: none;
     font-weight: 700;
     text-transform: uppercase;
