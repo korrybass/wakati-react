@@ -26,6 +26,10 @@ input[type=text]{
     margin-left: 30px;
     overflow: hidden;
 }
+.list-holder{
+    border-bottom: 1px solid #264d35;
+    padding: 15px 0;
+}
 .list-header{
     justify-content: space-between;
 }

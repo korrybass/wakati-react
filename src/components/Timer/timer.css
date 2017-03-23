@@ -33,6 +33,7 @@ body{
     -webkit-animation-duration: 1s;
     animation-duration: 1s;
     text-align: center;
+    color: #264d35;
 }
 .time-body span{
   min-width: 95px;
