@@ -19,7 +19,8 @@ button{
   font-family: 'Lobster', cursive;
   text-align: center;
   font-size: 45px;  
-    color: #427056;
+  color: #427056;
+  text-shadow: 0 1px 1px #031708;
 }
 button:hover{
   cursor: pointer;
@@ -38,7 +39,13 @@ button:focus{
 .flex-row{
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
+}
+.flex-row-center{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
 }
 
 

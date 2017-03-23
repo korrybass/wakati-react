@@ -10,8 +10,10 @@ class App extends Component {
       <div className="">
         <div className="">
           <h2 className="app-title">Wakati Timer</h2>
-          <Timer />
-          <List />
+          <div className="flex-row-center">
+            <Timer />
+            <List />
+          </div>
         </div>
       </div>
     );

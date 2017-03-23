@@ -9,11 +9,22 @@ input[type=text]{
     border: none;
     border-radius: 4px;
     margin-left: 15px;
-    background-color: #79ffb4;
+    border: #099f4b solid 1px;
     font-size: 16px;
+    background: transparent;
+}
+
+.duration{
+    max-width: 45px;
+}
+.completed-item {
+     text-decoration: line-through;
 }
 .list-container{
+    border-left: 1px solid #2f905a;
     padding: 0 30px;
+    margin-left: 30px;
+    overflow: hidden;
 }
 .list-header{
     justify-content: space-between;
@@ -34,8 +45,11 @@ input{
     padding: 8px;
 }
 input:focus{
-    border: none;
     outline: none;
+}
+
+.clear-btn{
+    margin-top: 50px;
 }
 
 @keyframes fadeInLeft {
@@ -54,10 +68,19 @@ input:focus{
   animation-name: fadeInLeft;
     padding: 7.5px;
 }
-input[type=text]{
-    box-sizing: border-box;
-    height: 25px;
-    border: none;
-    border-radius: 4px;
-    margin-left: 15px;
+
+@keyframes slideOutLeft {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    visibility: hidden;
+    transform: translate3d(-100%, 0, 0);
+  }
 }
+
+.slideOutLeft {
+  animation-name: slideOutLeft;
+}
+

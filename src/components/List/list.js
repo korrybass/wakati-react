@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './list.css';
+import OutputFormatter from "./outputFormater"
 import trashcan from "../../assests/img/trash-can.png"
 
 
@@ -7,17 +8,17 @@ class List extends Component {
     constructor(){
         super();
         this.state = {
-            tasks: []
+            tasks:  JSON.parse(localStorage.getItem('savedTasks')) || []
         }
     }
 
     addTask() {
-        this.setState({tasks: this.state.tasks.concat([{text: ''}])})
+        this.setState({tasks: this.state.tasks.concat([{text: '', start: "", duration: "", completed: false}])})
     }
 
-    updateTask (id, event) {
+    updateTask (idx, event) {
         let updatedArray = this.state.tasks.slice();
-        updatedArray[id]["text"] = event.target.value;
+        updatedArray[idx]["text"] = event.target.value;
         this.setState({tasks: updatedArray})
     }
 
@@ -26,21 +27,45 @@ class List extends Component {
         updatedArray.splice(idx, 1);
         this.setState({tasks: updatedArray});
     }
+    completeTask (idx, event){
+        let updatedArray = this.state.tasks.slice();
+        updatedArray[idx].completed = event.target.checked;
+        this.setState({tasks: updatedArray})
+    }
+    updateDuration (idx, event){
+        let updatedArray = this.state.tasks.slice();
+        updatedArray[idx]["duration"] = event.target.value;
+        this.setState({tasks: updatedArray})
+    }
+
+    clearAllTasks (){
+        this.setState({tasks: []})
+    }
     
     generateList () {
+         localStorage.setItem('savedTasks', JSON.stringify(this.state.tasks)) ;
+        
         return this.state.tasks.map( (x, idx) => {
+        let lineItemStyles = (this.state.tasks[idx].completed) ? "flex-row task-row fadeInLeft completed-item" : "flex-row task-row fadeInLeft";
+            
             return (
-                <div key={idx} className="flex-row task-row fadeInLeft">
+                <div key={idx} className={lineItemStyles}>
                     <div className="flex-row squaredThree">
-                        <input type="checkbox" value="None" id={"task-check-"+idx} name="check"  />
-                        <label htmlFor={"task-check-"+idx}></label>
+                        <input type="checkbox" 
+                        onChange={ (e) => {this.completeTask(idx, e) } }
+                        checked={this.state.tasks[idx].completed}
+                        id={"task-check-"+idx} name="check"  />
+                        <label htmlFor={"task-check-"+idx}></label> 
                     </div>
                     <input placeholder="enter task title" 
                         onChange={(e) => { this.updateTask(idx, e) }} 
                         value={this.state.tasks[idx].text} 
                         type='text' />
+                    <input className="duration" type='text' placeholder="hr"
+                    onChange={(e) => { this.updateDuration(idx, e) }}
+                     value={this.state.tasks[idx].duration} />
                     <button className="trash-can-btn" onClick={() => { this.deleteTask(idx) }} type="button" >
-                        <img src={trashcan} />
+                        <img alt="" src={trashcan} />
                     </button>
                 </div>
             )
@@ -56,6 +81,14 @@ class List extends Component {
           </div>
         <div>
             {this.generateList()}
+        </div>
+        <div className="clear-btn">
+            <button type="button" onClick={this.clearAllTasks.bind(this)} >Clear All Tasks</button>
+        </div>
+
+        <div>
+            <h4> Generate Email Body </h4>
+            <OutputFormatter taskRecords={this.state.tasks} />
         </div>
       </div>
     );
