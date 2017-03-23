@@ -47,7 +47,9 @@ button:focus{
   align-items: flex-start;
   justify-content: center;
 }
-
+.flex-to-right{
+  margin-left: auto;
+}
 
 /* .squaredThree */
 .squaredThree {

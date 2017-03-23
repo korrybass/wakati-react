@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './list.css';
 import OutputFormatter from "./outputFormater"
-import trashcan from "../../assests/img/trash-can.png"
+import trashcan from "../../assests/img/trash-can.svg"
 
 
 class List extends Component {
@@ -75,16 +75,18 @@ class List extends Component {
   render() {
     return (
       <div className="list-container">
-          <div className="flex-row list-header">
+         <div className="list-holder">
+              <div className="flex-row list-header">
             <h3>Daily Tasks</h3>
             <button type="button" className="action-btn add-btn" onClick={this.addTask.bind(this)}>+</button>
           </div>
         <div>
             {this.generateList()}
         </div>
-        <div className="clear-btn">
-            <button type="button" onClick={this.clearAllTasks.bind(this)} >Clear All Tasks</button>
+        <div className="flex-row clear-btn">
+            <button className="flex-to-right" type="button" onClick={this.clearAllTasks.bind(this)} >Clear All Tasks</button>
         </div>
+         </div>
 
         <div>
             <OutputFormatter taskRecords={this.state.tasks} />
