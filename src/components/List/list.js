@@ -87,7 +87,6 @@ class List extends Component {
         </div>
 
         <div>
-            <h4> Generate Email Body </h4>
             <OutputFormatter taskRecords={this.state.tasks} />
         </div>
       </div>

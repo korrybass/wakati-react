@@ -10,7 +10,7 @@ class OutputFormatter extends Component {
 formatDataOutput (){
   return this.props.taskRecords.map( (x, idx) => {
     return (
-      <div className="task-output-line">
+      <div key={idx} className="task-output-line">
         <p>{x.text}</p> | <p>{x.duration}</p> | <p>{ (x.completed) ? "Completed" : "In Progress" }</p>
       </div>
     )
@@ -19,8 +19,12 @@ formatDataOutput (){
 
   render() {
     return (
-      <div className="">
-        {this.formatDataOutput()}
+      <div >
+        <h4 className="body-header"> Generate Email Body </h4>
+        <div className="output-body">
+          <h5>Date: {new Date().getMonth()+1 + "-" + new Date().getDate() +"-" + new Date().getFullYear()}</h5>
+          {this.formatDataOutput()}
+        </div>
       </div>
     );
   }}
