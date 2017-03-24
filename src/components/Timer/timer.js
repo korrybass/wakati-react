@@ -36,7 +36,7 @@ class Timer extends Component {
     //endtime: new Date(new Date(currentTime.getTime()).setMinutes(currentTime.getMinutes() + 45))
     //========
     this.setState({ 
-      endtime: new Date(new Date(currentTime.getTime()).setSeconds(currentTime.getSeconds() + 5)),
+      endtime: new Date(new Date(currentTime.getTime()).setMinutes(currentTime.getMinutes() + 45)),      
       inProgress: true    
     })
     var time = currentTime.getTime();
@@ -100,7 +100,7 @@ class Timer extends Component {
     return (
       <div className="timer-container">
         <div id="wakati">
-          <div className="time-body zoomInDown">
+          <div className="time-body slideInDown">
             <span className="minutes">{this.state.minutes}</span> : <span className="seconds">{this.state.seconds}</span>      
           </div>
           <div className="wakati-buttons">

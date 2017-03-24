@@ -11,7 +11,7 @@ formatDataOutput (){
   return this.props.taskRecords.map( (x, idx) => {
     return (
       <div key={idx} className="task-output-line">
-        <p>{x.text}</p> | <p>{x.duration}</p> | <p>{ (x.completed) ? "Completed" : "In Progress" }</p>
+        <p>{x.text}</p> | <p>{x.duration}</p>hr | <p>{ (x.completed) ? "Completed" : "In Progress" }</p>
       </div>
     )
   })

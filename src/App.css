@@ -1,6 +1,11 @@
 .action-btn{
-    background-color: #2f905a;  
+    background-color: #C25034;  
 }
+
+h1,h2, h3,h4,h5,h6, p, small, input{
+  color: #7b7b7b;
+}
+
 .add-btn{
   width: 45px;
   height: 45px;
@@ -19,12 +24,12 @@ button{
   font-family: 'Lobster', cursive;
   text-align: center;
   font-size: 45px;  
-  color: #427056;
+  color: #C25034;
   text-shadow: 0 1px 1px #031708;
 }
 button:hover{
   cursor: pointer;
-  background-color: #227748;
+  background-color: #a03f27;
 }
 button:focus{
   outline: none;
@@ -70,7 +75,7 @@ button:focus{
     position: absolute;
     /*top: 0;*/
     left: 0;
-    background: #13b35a;
+    background: #C25034;
     border-radius: 4px;
     box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,.4);
   }
